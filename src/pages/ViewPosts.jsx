@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import Button from "../components/Button";
+
 
 const ViewPosts = () => {
 
@@ -304,7 +305,7 @@ const ViewPosts = () => {
                                             </svg>
                                             {post.views || 0} views
                                         </span>
-                                        <button
+                                        {/* <button
                                             onClick={() =>
                                                 handleLikeToggle(post.id)
                                             }
@@ -345,7 +346,49 @@ const ViewPosts = () => {
                                                   ((post.likes || 0) !== 1
                                                       ? "s"
                                                       : "")}
-                                        </button>
+                                        </button> */}
+                                        <Button
+                                            onClick={() =>
+                                                handleLikeToggle(post.id)
+                                            }
+                                            disabled={likeLoading[post.id]}
+                                            className={`flex items-center gap-1 text-xs font-semibold focus:outline-none transition-colors w-1/2  ${
+                                                likedPosts[post.id]
+                                                    ? "text-pink-400"
+                                                    : "text-gray-300 hover:text-pink-400"
+                                            }`}
+                                            title={
+                                                likedPosts[post.id]
+                                                    ? "Unlike"
+                                                    : "Like"
+                                            }
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="h-4 w-4"
+                                                fill={
+                                                    likedPosts[post.id]
+                                                        ? "currentColor"
+                                                        : "none"
+                                                }
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M11.049 2.927C11.343 2.362 11.925 2 12.5 2c1.378 0 2.5 1.122 2.5 2.5 0 .575-.227 1.096-.596 1.464L12 12l-2.404-5.036A2.493 2.493 0 0112.5 4.5c.575 0 1.096.227 1.464.596z"
+                                                />
+                                            </svg>
+                                            {likeLoading[post.id]
+                                                ? "..."
+                                                : (post.likes || 0) +
+                                                  " like" +
+                                                  ((post.likes || 0) !== 1
+                                                      ? "s"
+                                                      : "")}
+                                        </Button>
                                     </div>
                                 </div>
                             </div>

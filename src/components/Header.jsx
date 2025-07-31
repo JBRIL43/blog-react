@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Button from "./Button";
 
 const Header = () => {
     const { user } = useSelector((state) => state.auth);
@@ -92,12 +93,12 @@ const Header = () => {
                         <span className="text-white font-semibold">
                             {localStorage.getItem("user")?.name}
                         </span>
-                        <button
+                          <Button
                             onClick={handleLogout}
                             className="ml-2 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded transition"
                         >
                             Log Out
-                        </button>
+                        </Button>
                     </div>
                 )}
             </div>

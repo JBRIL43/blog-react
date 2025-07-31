@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import api from "../services/api";
 import { useSelector, useDispatch } from "react-redux";
 import { setComments, setLoading, setError } from "../features/commentsSlice";
+import Button from "../components/Button";
 
 const PostDetails = () => {
     const { id } = useParams();
@@ -133,26 +134,12 @@ const PostDetails = () => {
                 </div>
                 {/* Like & Share */}
                 <div className="flex items-center gap-3 mb-4">
-                    <button
+                    <Button
                         onClick={handleLike}
-                        className="flex items-center gap-1 text-pink-400 hover:text-pink-600 font-semibold focus:outline-none"
+                        disabled={!token}
                     >
-                        <svg
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M14 10h4.764a2 2 0 011.789 2.894l-3.764 7.528A2 2 0 0115 22H9a2 2 0 01-1.789-1.106l-3.764-7.528A2 2 0 014.236 10H9m5 0V5a3 3 0 00-6 0v5m6 0H9"
-                            />
-                        </svg>
-                        {post.likes || 0} Like
-                        {(post.likes || 0) !== 1 ? "s" : ""}
-                    </button>
+                        {post.likes || 0} Likes
+                    </Button>
                     {/* Add share button if needed */}
                 </div>
                 {/* Cover Image */}
@@ -235,15 +222,13 @@ const PostDetails = () => {
                                 }
                                 disabled={commentLoading}
                             />
-                            <button
+                            <Button
                                 type="submit"
                                 className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors disabled:opacity-60"
-                                disabled={
-                                    commentLoading || !commentInput.trim()
-                                }
+                                disabled={commentLoading || !commentInput.trim()}
                             >
                                 {commentLoading ? "Posting..." : "Post Comment"}
-                            </button>
+                            </Button>
                         </form>
                     ) : (
                         <div className="mb-6 text-gray-300">
