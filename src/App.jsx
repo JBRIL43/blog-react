@@ -9,6 +9,7 @@ import NewPost from "./pages/NewPost";
 import ViewPosts from "./pages/ViewPosts";
 import EditPost from "./pages/EditPost";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path="/new" element={<NewPost />} />
                 <Route path="/edit/:id" element={<EditPost />} />
             </Routes>
+            <Footer />  
         </BrowserRouter>
     );
 };
