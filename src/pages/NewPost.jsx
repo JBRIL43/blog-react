@@ -3,6 +3,7 @@ import api from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setPosts } from "../features/postsSlice";
+import Button from "../components/Button";
 
 const categories = [
     "Technology",
@@ -100,39 +101,36 @@ const NewPost = () => {
                     </div>
                     {/* Markdown toolbar placeholder */}
                     <div className="flex gap-2 mb-2">
-                        <button
+                        <Button
                             type="button"
-                            className="bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20"
-                            title="Bold"
-                        >
-                            <b>B</b>
-                        </button>
-                        <button
+                            className="h-10 w-10 bg-transparent"
+                        ><b>B</b></Button>
+                        <Button
                             type="button"
-                            className="bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20"
+                            className="bg-white/10 text-white px-2 py-1 rounded "
                             title="Italic"
                         >
                             <i>I</i>
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             type="button"
                             className="bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20"
                             title="List"
                         >
                             • List
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             type="button"
                             className="bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20"
                             title="Code"
-                        >{`</>`}</button>
-                        <button
+                        >{`</>`}</Button>
+                        <Button
                             type="button"
                             className="bg-white/10 text-white px-2 py-1 rounded hover:bg-white/20"
                             title="Link"
                         >
                             🔗
-                        </button>
+                        </Button>
                     </div>
                     <div>
                         <label className="block text-white mb-2 font-semibold">

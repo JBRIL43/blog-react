@@ -3,6 +3,7 @@ import api from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToken } from "../features/authSlice";
+import Button from "../components/Button";
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -110,13 +111,18 @@ const Register = () => {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                 />
-                <button
+                {/* <button
                     type="submit"
                     className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
                     disabled={loading}
                 >
                     {loading ? "Registering..." : "Register"}
-                </button>
+                </button> */}
+                <Button type="submit" loading={loading}
+                className="w-full rounded-full "
+                >
+                    {loading ? "Registering..." : "Register"}
+                </Button>
             </form>
 
             {/* Custom Animations */}
