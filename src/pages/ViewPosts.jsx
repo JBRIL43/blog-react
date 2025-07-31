@@ -167,7 +167,7 @@ const ViewPosts = () => {
             onChange={(e) => setCategory(e.target.value)}
           >
             {categories.map((cat) => (
-              <option key={cat} value={cat}>
+              <option className="bg-transparent text-black" key={cat} value={cat}>
                 {cat}
               </option>
             ))}
@@ -178,7 +178,7 @@ const ViewPosts = () => {
             onChange={(e) => setSort(e.target.value)}
           >
             {sortOptions.map((opt) => (
-              <option key={opt.value} value={opt.value}>
+              <option className="bg-transparent text-black" key={opt.value} value={opt.value}>
                 {opt.label}
               </option>
             ))}
