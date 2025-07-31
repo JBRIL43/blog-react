@@ -10,7 +10,8 @@ import ViewPosts from "./pages/ViewPosts";
 import EditPost from "./pages/EditPost";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import AboutUs from "./pages/AboutUs"; // Importing AboutUs page
+import AboutUs from "./pages/AboutUs"; 
+import Categories from "./pages/Categories";
 
 const App = () => {
     return (
@@ -25,7 +26,8 @@ const App = () => {
                 <Route path="/posts/:id" element={<PostDetails />} />
                 <Route path="/new" element={<NewPost />} />
                 <Route path="/edit/:id" element={<EditPost />} />
-                <Route path="/about" element={<AboutUs />} /> {/* Route for AboutUs page */}
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/categories" element={<Categories />} /> 
             </Routes>
             <Footer />  
         </BrowserRouter>
