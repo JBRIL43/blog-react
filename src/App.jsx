@@ -12,7 +12,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AboutUs from "./pages/AboutUs"; 
 import Categories from "./pages/Categories";
-
 const App = () => {
     return (
         

@@ -1,12 +1,73 @@
-# React + Vite
+# ModernBlog Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for ModernBlog, built with React and designed to work with the **blog-laravel** backend API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
+### 1. **Clone the Repositories**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Clone the frontend
+git clone https://github.com/your-username/blog-frontend.git
+cd blog-frontend
+
+
+```
+
+---
+
+### 2. **Install Frontend Dependencies**
+
+```bash
+cd blog-frontend
+npm install
+```
+
+---
+
+### 3. **Run the Frontend**
+
+```bash
+cd blog-frontend
+npm run dev
+```
+
+- The app will start at [http://localhost:5173](http://localhost:5173).
+
+---
+
+### 4. **Configure the Backend API**
+
+- Make sure your **blog-laravel** backend is running (usually at `http://localhost:8000`).
+- And msql server is runing (recomended installing xampp for full package)
+- Update the API base URL in `src/services/api.js` if needed:
+  ```js
+  // src/services/api.js
+  import axios from "axios";
+  export default axios.create({
+    baseURL: "http://localhost:8000/api",
+    withCredentials: true, // if using cookies
+  });
+  ```
+
+---
+
+
+### 6. **Login & Register**
+
+- Register a new user or log in with existing credentials.
+- You can now create, view, edit, and delete blog posts.
+
+---
+
+## 🛠 Features
+
+- Modern UI with React and Tailwind CSS
+- Authentication (JWT or HTTP-only cookies)
+- Create, edit, and delete posts
+- Categories, tags, and Markdown support
+- Responsive design
+
+---
